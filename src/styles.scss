@@ -57,6 +57,19 @@
             width: 80%;
             justify-content: flex-end;
 
+            .uxp-button{
+                border-radius: 10px;
+                background-color: #ffffff;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
+                margin: 0 1.5em 0 0em;
+                padding: 10px 20px;
+
+                &.active-btn{
+                    background-color: #467df4;
+                    color: #ffffff;
+                }
+            }
+
           
         }
     }
@@ -69,7 +82,7 @@
     background-size: 100% auto;
     width: 2em;
     height: 2em;
-    margin: 3px 0px 0 0;
+    margin: 7px 0px 0 0;
     background-image: url(https://static.iviva.com/images/Udhayimages/calendar.png);
 
 
@@ -106,6 +119,7 @@
             padding: 4em 0;
             margin: 0;
             text-align: center;
+            position: relative;
 
             .energy-icon{
                 display: inline-block;
@@ -200,7 +214,7 @@
 
              .info{
                 position: absolute;
-                bottom: 3em;
+                bottom: 0em;
                 right: 0;
                 left: 50%;
                 background-repeat: no-repeat;
@@ -210,14 +224,14 @@
                 height: 25px;
                 background-image: url(https://static.iviva.com/images/Udhayimages/info.png);
                 cursor: pointer;
-                transform: translatex(-50%);
-
-                    .info-cont{
-                        display: inline-block;
-                        width: 150px;
-                    }
+                transform: translatex(-50%); 
                 }
-
+                .tooltip-content {
+                    width: 90%;
+                    position: absolute;
+                    right: 5%;
+                    bottom: 3em;
+                }
                
         }
     
@@ -439,9 +453,22 @@
                 background-size: 100% auto;
                 width: 2em;
                 height: 2em;
-                margin: 3px 0px 0 0;
+                margin: 7px 0px 0 0;
                 background-image: url(https://static.iviva.com/images/Udhayimages/calendar.png);
 
+            }
+
+            .uxp-button{
+                border-radius: 10px;
+                background-color: #ffffff;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
+                margin: 0 1.5em 0 0em;
+                padding: 10px 20px;
+
+                &.active-btn{
+                    background-color: #467df4;
+                    color: #ffffff;
+                }
             }
         }
 
