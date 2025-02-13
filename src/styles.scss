@@ -1,0 +1,646 @@
+.action-section{
+    // width: 70%;
+    //   width: 56%;
+   // width: 48%;
+
+    .top-filter{
+        display: inline-flex;
+        width: 100%;
+        .select-filter{
+            display: inline-flex;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            color: #424242;
+ 
+            .uxp-form-select{
+                margin-right: 1.5em;
+                min-width: 140px;
+                text-align: center;
+
+                .uxp-select-placeholder:hover, .uxp-select-placeholder:focus, .uxp-select-placeholder:active, .uxp-select-placeholder.has-content,  .uxp-select-placeholder.active {
+                    background-color: white;
+                    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
+                } 
+               
+            }
+            .uxp-form-group{
+                margin-right: 1.5em;
+            }
+
+
+          
+        }
+    }
+}
+
+.uxp-widget-title-bar.energy_optimization_title{
+    display: inline-block;
+
+    .title-section{
+        display: inline-block;
+        width: 100%;
+    }
+    .action-section{
+        margin: 2em 0 0 2em;  
+        
+        .select-filter_lft{
+            display: inline-flex;
+            width: 20%; 
+            .uxp-form-select{ 
+                min-width: 150px;
+            }
+        }
+
+        .select-filter_rgt{
+            display: flex;
+            width: 80%;
+            justify-content: flex-end;
+
+            .calen-icon{
+                display: inline-block;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 100% auto;
+                width: 2em;
+                height: 2em;
+                margin: 3px 0px 0 0;
+                background-image: url(https://static.iviva.com/images/Udhayimages/calendar.png);
+
+            }
+        }
+    }
+}
+
+
+.energy_content{
+    display: inline-flex;
+    width: 100%;
+    margin-top: 1em;
+    padding: 0px 25px;
+
+    .energy-cont-lft{
+        display: inline-block;
+        width: 15%;
+        min-height: 20vh;
+        background: #6d8764;
+        position: relative;
+
+
+        .total_energy_status{
+            display: inline-block;
+            width: 100%;
+            padding: 4em 0;
+            margin: 0;
+            text-align: center;
+
+            .energy-icon{
+                display: inline-block;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 95% auto;
+                width: 8em;
+                height: 8em;
+                background-image: url(https://static.iviva.com/images/Udhayimages/flash.png);
+            }
+
+            h6.total_energy-title{
+                width: 100%; 
+                color: #fff;
+                text-align: center;
+                position: relative;
+                padding: 0.5em 1em; 
+                align-items: center;
+                display: inline-block; 
+                margin: 0;
+                padding: 4px 0px;
+                font-size: 1.5em; 
+                text-align: center;
+            }
+
+               
+           
+            h2{
+                display: inline-block;
+                font-size: 2.8em;
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                margin: 1em 0 0.8em 0;
+                line-height: 1.05em;
+                color: #08223e;;
+
+                span{
+                    font-size: 0.7em;
+                    color: #3c284d;
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500; 
+                }
+                em{
+                    font-style: normal;
+                    font-size: 0.4em;
+                    color: #3c284d;
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500; 
+                }
+            }
+
+            .status_bot-sec{
+                display: inline-block;
+                width: 100%;
+                color: #fff;
+                font-size: 1em;
+                margin-top: 2em;
+
+                .arrow{
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 95% auto;
+                    width: 2em;
+                    display: inline-block;
+                    height: 2em;
+                    margin: 0px 0 0 5px;
+                    vertical-align: bottom;
+                    &.up-arrow{
+                        background-image: url(https://static.iviva.com/images/Muthuimages/awesome-arrow-circle-up-green.svg);
+                    }
+                    &.down-arrow{
+                        background-image: url(https://static.iviva.com/images/Muthuimages/awesome-arrow-circle-down-red.svg);
+                    }
+                }
+            }
+
+            .tot-kwh{
+                font-style: normal;
+                font-size: 1em;
+                color: #fff;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                font-weight: 500;
+                margin-top: 1.5em;
+            }
+
+             .info{
+                position: absolute;
+                bottom: 3em;
+                right: 0;
+                left: 50%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 95% auto;
+                width: 25px;
+                height: 25px;
+                background-image: url(https://static.iviva.com/images/Udhayimages/info.png);
+                cursor: pointer;
+                transform: translatex(-50%);
+
+                    .info-cont{
+                        display: inline-block;
+                        width: 150px;
+                    }
+                }
+        }
+    
+
+
+
+
+    }
+    .energy-cont-rgt{
+        display: inline-block;
+        width: 83%;
+        margin-left: 2%;
+
+        .side-section{
+            border: 1px solid;
+            display: inline-block;
+            width: 100%;
+            padding: 0em 0%;
+            border-top: none;
+
+            &.airside-section{
+                border-color: #765f89;
+            }
+            &.waterside-section{
+                border-color: #647687;
+                margin-top: 2em;
+
+                .section-title{
+                    background-color: #647687;
+                }
+
+                .side-section-cont{
+                    .status{
+                        border: 1px solid #647687;
+
+                        .side-title{ 
+                            background: #647687;
+                        }
+                    }
+                }
+            }
+
+            .section-title{
+                background-color: #765f89;
+                text-align: center;
+                color: #fff;
+
+                h5{
+                    padding: 10px 0px;
+                    margin: 0;
+                    font-size: 1.1em;
+                }
+            }
+
+            .side-section-cont{
+                   display: inline-flex;
+                    width: 100%;
+                    padding: 1.5em 2%;
+
+                .status{
+                    display: inline-block;
+                    width: 18%;
+                    margin-right: 2%;
+                    border: 1px solid #765f89;
+                    padding: 1em 1.5em; 
+
+                    .side-title{
+                        width: 100%;
+                        background: #765f89;
+                        border-radius: 15px;
+                        color: #fff;
+                        text-align: center;
+                        position: relative;
+                        padding: 0.5em 1em;
+                        height: 5.5em;
+                        align-items: center;
+                        display: inline-flex;
+                        
+
+                        &:hover{
+                            .info{ 
+                                display: block;
+                            }
+                        }
+
+                        p{
+                            margin: 0;
+                            padding: 4px 0px;
+                            font-size: 1.09em;
+                            line-height: 1.5em;
+                            display: inline-block;
+                            width: 100%;
+                            text-align: center;
+                            cursor: pointer;
+                        }
+
+                        .info{
+                            position: absolute;
+                            bottom: 7px;
+                            right: 7px;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: 95% auto;
+                            width: 18px;
+                            height: 18px;
+                            background-image: url(https://static.iviva.com/images/Udhayimages/info.png);
+                            cursor: pointer;
+
+                            .info-cont{
+                                display: inline-block;
+                                width: 150px;
+                            }
+                        }
+                    }
+                    h2{
+                        display: inline-block;
+                        font-size: 1.6em;
+                        width: 100%;
+                        text-align: center;
+                        padding: 0;
+                        margin: 0.7em 0 0.5em 0;
+                        line-height: 1.05em;
+
+                        span{
+                            font-size: 0.62em;
+                            color: #765f89;
+                            display: inline-block;
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+
+                    .status_bot-sec{
+                        display: inline-block;
+                        width: 100%;
+                        text-align: center;
+
+                        .arrow{
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: 95% auto;
+                            width: 19px;
+                            display: inline-block;
+                            height: 19px;
+                            margin: 0px 0 0 5px;
+                            vertical-align: bottom;
+                            &.up-arrow{
+                                background-image: url(https://static.iviva.com/images/Muthuimages/awesome-arrow-circle-up-green.svg);
+                            }
+                            &.down-arrow{
+                                background-image: url(https://static.iviva.com/images/Muthuimages/awesome-arrow-circle-down-red.svg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.side-energy-widget{
+    display: inline-block;
+    width: 100%;
+    padding: 0em 2%;
+
+    .top-filter{
+        display: inline-flex;
+        width: 100%;
+
+        .select-filter{
+            display: inline-flex;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            color: #424242;
+ 
+            .uxp-form-select{
+                margin-right: 1.5em;
+                min-width: 140px;
+                text-align: center;
+
+                .uxp-select-placeholder:hover, .uxp-select-placeholder:focus, .uxp-select-placeholder:active, .uxp-select-placeholder.has-content,  .uxp-select-placeholder.active {
+                    background-color: white;
+                    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
+                } 
+               
+            }
+            .uxp-form-group{
+                margin-right: 1.5em;
+            } 
+        }
+    }
+
+        .select-filter_lft{
+            display: inline-flex;
+            width: 20%; 
+            .uxp-form-select{ 
+                min-width: 150px!important;
+            }
+        }
+
+        .select-filter_rgt{
+            display: flex;
+            width: 80%;
+            justify-content: flex-end;
+
+            .calen-icon{
+                display: inline-block;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 100% auto;
+                width: 2em;
+                height: 2em;
+                margin: 3px 0px 0 0;
+                background-image: url(https://static.iviva.com/images/Udhayimages/calendar.png);
+
+            }
+        }
+
+
+
+        
+
+.scope-overall{
+    display: inline-flex;
+    width: 100%;
+    padding: 0px 2% 2em;
+
+    .scope-box{ 
+
+        display: inline-block;
+        width: 33%;
+        padding: 2.5em 2%;
+        border-radius: 15px;
+        margin: 0 0 0 1%;
+        height: 9em;
+        position: relative; 
+        
+        &.blue-scope-box{ 
+            background-color: #f1f5ff;  
+            margin-left: 0;
+
+            h4{
+                color: #5b68a3;
+            }
+
+            h3 span{
+                color: #273da2;
+            }
+        }
+
+        &.green-scope-box{ 
+            background-color: #f0faf1;
+
+            h4{
+                color: #78bc85;
+            }
+            h3 span{
+                color: #24612f;
+            }
+        }
+
+        &.purple-scope-box{ 
+            background-color: #fbf5ff;
+
+            h4{
+                color: #9e6dc7;
+            }
+            h3 span{
+                color: #5e1d95;
+            }
+        } 
+
+        h4{  
+            font-size: 1em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            margin: 0; 
+            font-weight: normal;
+            color: #fff;
+        }
+        h3{  
+            font-size: 1.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            margin-top: 7px;
+            color: #171717;
+            font-weight: bold;
+
+            span{
+                color: #303130;
+                font-size: 1.2em;
+                font-weight: 600;
+                em{
+                    font-style: normal;
+                    font-size: 0.7em;
+                }
+            }
+        }
+
+         .scope-bottom{
+                position: absolute;
+                bottom: 1.5em;
+                right: 1em;
+                em{
+                    font-size: 12px; 
+                    font-style: normal;
+                    font-weight: 600;
+                    color: #424242;
+                }
+               
+            }
+       
+    }
+}
+
+}
+
+
+.asset_wise-popup{
+   
+.modal-panel{
+    min-width: 90%;
+
+    .asset_wise-cont{
+        display: inline-block;
+        width: 100%;
+
+        .asset_wise-accordian{
+            display: inline-block;
+            width: 100%;
+
+            .accordian-section{
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 1em;
+
+                .accordian-section-list{ 
+                    display: inline-block;
+                    width: 100%;
+                    border: 1px solid #424242;
+                    padding: 0.5em 1em;
+                    border-radius: 5px;
+             
+                    .accordian-date{
+                        display: inline-block;
+                        border: 1px solid #424242;
+                        padding: 7px 10px;
+                        border-radius: 5px;
+                        font-size: 1.05em;
+                        margin-top: 3px;
+                    
+                    }
+                    .total-saving{
+                        display: inline-block;
+                        font-size: 1.2em;
+                        margin: 0px 0 0 4%;
+                        padding: 0;
+                        /* width: 30%; */
+                        text-align: center;
+                    }
+
+                    .accordian-section-list-rgt{
+                        float: right;
+                        width: auto;
+                        vertical-align: middle;
+                        justify-content: flex-end;
+
+                        .trade-icon{
+                            display: inline-block;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: contain;
+                            width: 4em;
+                            height: 2.5em;
+                            margin: 5px 1em 0 0;
+                            background-image: url(https://static.iviva.com/images/Udhayimages/trade.png);  
+                        }
+                        .arrow-icon{
+                            display: inline-block;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: 100% auto;
+                            width: 1.8em;
+                            height: 1.8em;
+                            margin: 10px 0px 0 0;
+                            vertical-align: top;
+                            cursor: pointer;
+                           
+
+                            &.up-arrow{
+                                background-image: url(https://static.iviva.com/images/arrow-bot.svg);   
+                               transform: rotate(180deg);
+                            }
+                            &.down-arrow{
+                                background-image: url(https://static.iviva.com/images/arrow-bot.svg);   
+                            }
+                        }
+                    }
+                    
+                  
+                }
+
+                .accordian-section-table{
+                    display: inline-block;
+                    width: 95%;
+                    margin: 2em 0 0 5%; 
+
+                    .uxpcore_datatable__table{
+                        border: 1px solid #a5c941;
+                        min-width: 100% !important;
+
+                        .uxpcore_datatable__header{
+                            background: #a5c941;
+                        }
+
+                        .uxpcore_datatable__row{
+                            border-top: 1px solid #a5c94175;
+
+                            .uxpcore_datatable__cell{
+                                border-right: 1px solid #a5c941c7;
+
+                                &:last-child{
+                                    border-right: 0px solid #a5c941;
+                                }
+                            }
+                            &:nth-child(even){
+                                background: #ebf2d3;
+                            }
+                        }
+                    }
+                  
+                }
+            }
+        }
+    }
+}
+}

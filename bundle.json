@@ -1,0 +1,24 @@
+{
+    "id": "a7dec357-57cc-45e8-dece-48c7a11f30cb",
+    "author": "eutech",
+    "widgets": [
+        {
+            "id": "energy_Optimization_Strategies",
+            "name": "Energy Optimization Strategies",
+            "description": "A sample widget",
+            "icon": "",
+            "tags":[],
+            "category":"",
+            "isTemplate": false
+        }
+    ],
+    "sidebarLinks": [
+        
+    ],
+    "uis": [
+       
+    ],
+    "menuItems": [
+        
+    ]
+}

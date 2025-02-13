@@ -1,0 +1,39 @@
+{
+    "id": "7e0223ce-b67d-4b24-9bcf-a0e6413bf4ae",
+    "author": "",
+    "widgets": [
+        {
+            "id": "Energy_Optimization_Strategies",
+            "name": "Energy_Optimization_Strategies",
+            "description": "A sample widget",
+            "icon": "",
+            "tags":[]
+            "category":"",
+            "isTemplate": true/false // this will mark the widget as a template 
+        }
+    ],
+    "sidebarLinks": [
+        {
+            "id": "Energy_Optimization_StrategiesLink",
+            "label": "",
+            "description": "",
+            "target": "",
+            "icon": "",
+            "roles":[]
+        }
+    ],
+    "uis": [
+        {
+            "id": "Energy_Optimization_StrategiesLink",
+            "label":"",
+            "description": "",
+            "roles": []
+        }
+    ],
+    "menuItems": [
+        {
+            "id": "Energy_Optimization_StrategiesLink",
+            "title": "Energy_Optimization_Strategies"
+        }
+    ]
+}
