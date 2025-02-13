@@ -11,34 +11,10 @@ interface IWidgetProps {
     uxpContext?: IContextProvider,
     instanceId?: string,
     content: string; // Ensure this is correct
-}     
+}      
  
-
-interface EmissionData {
-    [x: string]: any;
-    ScopeKey: string;
-    ScopeName: string;
-    CarbonEmission: string; // This can also be a number if you always get numbers
-}
-interface ScopePopupData {
-    MonthString: string;
-    Scope1: number;
-    Scope2: number;
-    Scope3: number;
-} 
-
-interface IDataItem {
-    name: string;
-    value: number;
-    color?: string;  
-  }
-  interface AggregatedData {
-    name: string;
-    y: number; // This will hold the aggregated carbon emissions
-}
 const Energy_Optimization_Strategies: React.FunctionComponent<IWidgetProps> = (props) => { 
- 
-
+  
     const months=[
         {Value:'1',Label:'January'},
         {Value:'2',Label:'February'},
@@ -65,8 +41,7 @@ let [selected4, setSelected4] = React.useState<string | null>("op-1");
 let [selected5, setSelected5] = React.useState<string | null>("op-1");  
  
 let [showModal, setShowModal] = React.useState(false);
-let [showModal1, setShowModal1] = React.useState(false);
-let [modelData, setModelData] = React.useState<any>(null);  
+let [showModal1, setShowModal1] = React.useState(false); 
 
 
 
@@ -171,9 +146,7 @@ const airstatusElements = airSideEnergyData.map((item, index) => (
           
     </div>  
     <h2>{item.value} <span>kWh</span></h2> 
-    <div className="status_bot-sec"><span className={`arrow ${item.arrow_status}`}></span> {item.change} %</div> 
-
-   
+    <div className="status_bot-sec"><span className={`arrow ${item.arrow_status}`}></span> {item.change} %</div>  
 
   </div> 
 ));
@@ -192,78 +165,8 @@ const waterstatusElements = waterSideEnergyData.map((item, index) => (
    </div> 
  ));
  
- const [showLinkWidget, setShowLinkWidget] = useState(false); // Set to true initially
- const [showLinkWidget1, setShowLinkWidget1] = useState(false); // Set to true initially
-
-
+ const [showLinkWidget, setShowLinkWidget] = useState(false); // Set to true initially 
  
-const consumptionCompositionData = [
-  { 
-    "years": 2021,
-    "Scope 1": 4000,
-    "Scope 2": 2400,
-    "Scope 3": 2400,
-    "Baseline": 587,
-    "Carbon Reduction Goals": 758,
-    "Trend Forecast": 368
-  },
-  { 
-    "years": 2022,
-    "Scope 1": 3000,
-    "Scope 2": 1398,
-    "Scope 3": 2210,
-    "Baseline": 2543,
-    "Carbon Reduction Goals": 254,
-    "Trend Forecast": 457
-  },
-  { 
-    "years": 2023,
-    "Scope 1": 2000,
-    "Scope 2": 9800,
-    "Scope 3": 2290,
-    "Baseline": 1570,
-    "Carbon Reduction Goals": 758,
-    "Trend Forecast": 498
-  },
-  { 
-    "years": 2024,
-    "Scope 1": 2780,
-    "Scope 2": 3908,
-    "Scope 3": 2000,
-    "Baseline": 1690,
-    "Carbon Reduction Goals": 657,
-    "Trend Forecast": 462
-  },
-  { 
-    "years": 2025,
-    "Scope 1": 1890,
-    "Scope 2": 4800,
-    "Scope 3": 2181,
-    "Baseline": 1247,
-    "Carbon Reduction Goals": 854,
-    "Trend Forecast": 357
-  },
-  { 
-    "years": 2026,
-    "Scope 1": 2390,
-    "Scope 2": 3800,
-    "Scope 3": 2500,
-    "Baseline": 1658,
-    "Carbon Reduction Goals": 654,
-    "Trend Forecast": 124
-  },
-  { 
-    "years": 2027,
-    "Scope 1": 3490,
-    "Scope 2": 4300,
-    "Scope 3": 2100,
-    "Baseline": 1520,
-    "Carbon Reduction Goals": 365,
-    "Trend Forecast": 784
-  }
-]; 
-
-
 
 // Data with Daily & Cumulative Savings
 const energySavingData = [
@@ -299,8 +202,7 @@ const energySavingData = [
   { date: "2025-01-30", daily: 125, cumulative: 3425 },
   { date: "2025-01-31", daily: 150, cumulative: 3575 },
 ];
-
-
+ 
 
 const assetWiseData = [
   {
@@ -340,21 +242,15 @@ const [openIndex, setOpenIndex] = useState(null);
 
 const toggleAccordion = (index: number) => {
   setOpenIndex(openIndex === index ? null : index);
-};
+};    
 
-
-
-
-
-
-const trendAnalysisData = [
-  { time: 0, tempSetpoint: 22, ambientTemp: 30, humidity: 60, occupancy: 10, energySaving: null, energyConsumption: 130 },
-  { time: 5, tempSetpoint: 22, ambientTemp: 32, humidity: 62, occupancy: 12, energySaving: null, energyConsumption: 132 },
-  { time: 10, tempSetpoint: 22, ambientTemp: 31, humidity: 58, occupancy: 10, energySaving: null, energyConsumption: 131 },
-  { time: 15, tempSetpoint: 22, ambientTemp: 30, humidity: 57, occupancy: 20, energySaving: 135, energyConsumption: 134 }, // Energy saving starts
-  { time: 20, tempSetpoint: 22, ambientTemp: 35, humidity: 55, occupancy: 18, energySaving: 140, energyConsumption: 138 }, // Energy saving duration
-
-];
+const energyChartData = [
+  { time: 0, tempSetpoint: 22, ambientTemp: 30, humidity: 50, occupancy: 5, energySaving: 0, energyConsumption: 140 },
+  { time: 5, tempSetpoint: 22, ambientTemp: 29, humidity: 48, occupancy: 10, energySaving: 0, energyConsumption: 138 },
+  { time: 10, tempSetpoint: 22, ambientTemp: 28, humidity: 46, occupancy: 15, energySaving: 0, energyConsumption: 136 },
+  { time: 15, tempSetpoint: 22, ambientTemp: 27, humidity: 44, occupancy: 25, energySaving: 70, energyConsumption: 134 },
+  { time: 20, tempSetpoint: 22, ambientTemp: 30, humidity: 42, occupancy: 20, energySaving: 70, energyConsumption: 140 },
+]; 
 
 
     return (
@@ -445,19 +341,15 @@ const trendAnalysisData = [
 
             <div className="energy_content">
 
-                    <div className="energy-cont-lft">
-
-                    <div className="total_energy_status">  
-                      <span className="energy-icon"></span>
-                        <h6 className="total_energy-title">Energy Saving</h6>   
-                        <h2>19.214.20 <span>kWh</span><em>2025-01-01 to 2025-01-31</em></h2> 
-                        <div className="status_bot-sec"><span className={`arrow up-arrow`}></span> 3.52 %</div>  
-                        <div className="tot-kwh">235.25 kWh</div> 
-                        <span className="info"></span> 
-                    </div> 
-
-
-
+                    <div className="energy-cont-lft"> 
+                          <div className="total_energy_status">  
+                            <span className="energy-icon"></span>
+                              <h6 className="total_energy-title">Energy Saving</h6>   
+                              <h2>19.214.20 <span>kWh</span><em>2025-01-01 to 2025-01-31</em></h2> 
+                              <div className="status_bot-sec"><span className={`arrow up-arrow`}></span> 3.52 %</div>  
+                              <div className="tot-kwh">235.25 kWh</div> 
+                              <span className="info"></span> 
+                          </div>   
                     </div>
 
                      <div className="energy-cont-rgt">
@@ -465,12 +357,9 @@ const trendAnalysisData = [
                             <div className="side-section airside-section">
                                     <div className="section-title airside-section-title"> 
                                         <h5>Air Side - Energy Optimizations based Savings</h5> 
-                                    </div>
-
+                                    </div> 
                                     <div className="side-section-cont airside-section-cont">
-                                          {airstatusElements}
-
-                                         
+                                          {airstatusElements} 
                                     </div>
                             </div>
 
@@ -488,10 +377,9 @@ const trendAnalysisData = [
 
  
             <LinkWidgetContainer show={showLinkWidget} onClose={() => setShowLinkWidget(false)} 
-            title="Setpoint Adjustments">
+                title="Setpoint Adjustments">
 
-                          <div className="side-energy-widget"> 
-
+                          <div className="side-energy-widget">  
 
                                 <div className="top-filter">
                                       <div className="select-filter">   
@@ -506,8 +394,7 @@ const trendAnalysisData = [
                                                   ]}
                                                   onChange={(value) => { setSelected(value) }}
                                                   placeholder=" -- select --"
-                                              />
-
+                                              /> 
 
                                               <Select
                                                   selected={selected1}
@@ -593,10 +480,8 @@ const trendAnalysisData = [
                                 <TitleBar title='Energy Savings Overview' />  
                                 
                                     <div style={{ width: "96%", padding: "2em 2%", margin: "2em" }}>  
-                                      
-                                   
 
-                                    <ResponsiveContainer width="100%" height={350}>
+                                          <ResponsiveContainer width="100%" height={350}>
                                             <ComposedChart data={energySavingData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
                                               <CartesianGrid strokeDasharray="3 3" /> 
                                               <XAxis
@@ -612,8 +497,7 @@ const trendAnalysisData = [
                                               <Bar onClick={() => setShowModal(true)} yAxisId="left" dataKey="daily" fill="#467df4" name="Daily Savings" /> 
                                               <Line yAxisId="right" dataKey="cumulative" stroke="#4caf50" dot={false} strokeWidth={2} name="Cumulative Savings" />
                                             </ComposedChart>
-                                          </ResponsiveContainer> 
-
+                                          </ResponsiveContainer>  
                               
                                     </div>  
 
@@ -643,11 +527,7 @@ const trendAnalysisData = [
 
                             </div> 
 
-                          </div> 
-
-
-
-                          
+                        </div>  
             
              {/* Modal for Editing Table 1 */}
              <Modal title="Set Point Adjustments - Asset wise" className="asset_wise-popup" show={showModal} onClose={() => setShowModal(false)}>
@@ -693,134 +573,47 @@ const trendAnalysisData = [
 
                            </div>
 
-                     </div>
+                     </div> 
 
+            <Modal title="Set Point Adjustments - Asset wise" className="asset_wise-popup" show={showModal1} onClose={() => setShowModal1(false)}>
+                 
 
-                     {/* <LinkWidgetContainer show={showLinkWidget1} onClose={() => setShowLinkWidget1(false)} 
-                        title="Trend Analysis"> */}
+              <ResponsiveContainer width="100%" height={400}>
+                <ComposedChart data={energyChartData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
 
+                  {/* X-Axis and Y-Axis */}
+                  <XAxis dataKey="time" label={{ value: "Time (Hours)", position: "insideBottom", offset: -5 }} />
+                  <YAxis yAxisId="left" label={{ value: "Conditions", angle: -90, position: "insideLeft" }} />
+                  <YAxis yAxisId="right" orientation="right" label={{ value: "Energy Consumption (kWh)", angle: -90, position: "insideRight" }} />
 
+                  <Tooltip />
+                  <Legend />
 
-<Modal title="Set Point Adjustments - Asset wise" className="asset_wise-popup" show={showModal1} onClose={() => setShowModal1(false)}>
-                
+                  {/* Area for Energy Saved Duration */}
+                  <Area yAxisId="right" type="monotone" dataKey="energySaving" stroke="none" fill="green" fillOpacity={0.3} name="Energy Saved Duration" />
 
-                          Hello
+                  {/* Lines for conditions */}
+                  <Line yAxisId="left" type="monotone" dataKey="tempSetpoint" stroke="red" name="Temp Setpoint (°C)" />
+                  <Line yAxisId="left" type="monotone" dataKey="ambientTemp" stroke="green" name="Ambient Temp (°C)" />
+                  <Line yAxisId="left" type="monotone" dataKey="humidity" stroke="blue" name="Humidity (%)" />
+                  <Line yAxisId="left" type="monotone" dataKey="occupancy" stroke="cyan" name="Occupancy Level" />
 
+                  {/* Dashed line for Energy Saving */}
+                  <Line yAxisId="right" type="monotone" dataKey="energySaving" stroke="magenta" strokeDasharray="5 5" name="Energy Saving (kWh)" />
 
-                             {/* <ResponsiveContainer width="100%" height={400}>  
-
-                                          <ComposedChart 
-                                          data={consumptionCompositionData.map((entry) => ({
-                                              ...entry,
-                                              "Business as usual": (entry["Scope 1"] + entry["Scope 2"] + entry["Scope 3"]) / 3, // Calculating average inline
-                                          }))} 
-                                          margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-                                          
-                                          <CartesianGrid strokeDasharray="3 3" />
-                                          <XAxis dataKey="years" />
-                                          <YAxis />
-                                          <Tooltip />
-                                          <Legend />
-                                          
-                                          <Bar barSize={10} dataKey="Scope 1" stackId="a" fill="#4c6a48" />
-                                          <Bar barSize={10} dataKey="Scope 2" stackId="a" fill="#466f81" />
-                                          <Bar barSize={10} dataKey="Scope 3" stackId="a" fill="#b97244" />
-
-                                          <Line type="monotone" dataKey="Baseline" stroke="#4c6a48" />
-                                          <Line type="monotone" dataKey="Carbon Reduction Goals" stroke="#ff7300" />
-                                          <Line type="monotone" dataKey="Trend Forecast" stroke="#b97244" />
-                                              
-                                          <Line type="monotone" dataKey="Business as usual" stroke="#424242" strokeDasharray="3 3" dot={true} name="Business as usual" />
-
-                                          </ComposedChart> 
-
-
-                                      </ResponsiveContainer>    */}
-
-
-
-
-                                      
-
-
-                                      
- 
-        
-      <ResponsiveContainer width="100%" height={400}>
-      <ComposedChart 
-        data={trendAnalysisData} 
-        margin={{ top: 20, right: 40, left: 20, bottom: 30 }}>
-        
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" label={{ value: "Time (Hours)", position: "bottom" }} />
-
-        {/* Left Y-Axis (Conditions) */}
-        <YAxis 
-          yAxisId="left" 
-          label={{ value: "Conditions", angle: -90, position: "insideLeft" }} 
-          domain={[0, 100]} 
-          type="number"
-          allowDataOverflow
-        />
-
-        {/* Right Y-Axis (Energy Consumption) */}
-        <YAxis 
-          yAxisId="right" 
-          orientation="right" 
-          label={{ value: "Energy Consumption (kWh)", angle: -90, position: "insideRight" }} 
-          domain={[120, 150]} 
-          type="number"
-          allowDataOverflow
-        />
-
-        <Tooltip />
-        <Legend />
-
-        {/* Shaded Region - Energy Saved Duration */}
-        <ReferenceArea x1={15} x2={20} strokeOpacity={0.3} fill="green" fillOpacity={0.3} />
-
-        {/* Conditions Lines */}
-        <Line yAxisId="left" type="monotone" dataKey="tempSetpoint" stroke="red" name="Temp Setpoint (°C)" />
-        <Line yAxisId="left" type="monotone" dataKey="ambientTemp" stroke="blue" name="Ambient Temp (°C)" />
-        <Line yAxisId="left" type="monotone" dataKey="humidity" stroke="green" name="Humidity (%)" />
-        <Line yAxisId="left" type="monotone" dataKey="occupancy" stroke="lightblue" name="Occupancy Level" />
-
-        {/* Energy Consumption Line */}
-        <Line yAxisId="right" type="monotone" dataKey="energyConsumption" stroke="black" name="Energy Consumption (kWh)" />
-
-        {/* Energy Saving Line - Dashed */}
-        <Line 
-          yAxisId="right" 
-          type="monotone" 
-          dataKey="energySaving" 
-          stroke="purple" 
-          strokeDasharray="5 5" 
-          dot={false} 
-          name="Energy Saving (kWh)" 
-        />
-      </ComposedChart>
-    </ResponsiveContainer>
-
-
-
- 
-
-
-
-
-            {/* </LinkWidgetContainer> */}
+                </ComposedChart>
+              </ResponsiveContainer> 
 
             </Modal>
    
-                </Modal>
+        </Modal> 
 
-
-                       </LinkWidgetContainer>
+      </LinkWidgetContainer>
                             
-
-                    </WidgetWrapper>
-                )
-            }; 
+    </WidgetWrapper>
+ )
+}; 
 
 export default Energy_Optimization_Strategies;
 
