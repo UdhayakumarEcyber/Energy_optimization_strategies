@@ -57,21 +57,34 @@
             width: 80%;
             justify-content: flex-end;
 
-            .calen-icon{
-                display: inline-block;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 100% auto;
-                width: 2em;
-                height: 2em;
-                margin: 3px 0px 0 0;
-                background-image: url(https://static.iviva.com/images/Udhayimages/calendar.png);
-
-            }
+          
         }
     }
 }
 
+.calen-icon{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    width: 2em;
+    height: 2em;
+    margin: 3px 0px 0 0;
+    background-image: url(https://static.iviva.com/images/Udhayimages/calendar.png);
+
+
+    .filter-panel-btn{
+        background: transparent;
+
+        &:hover{
+            background: transparent;  
+        }
+
+        .icon-container{
+            display: none;
+        }
+    } 
+}
 
 .energy_content{
     display: inline-flex;
@@ -204,6 +217,8 @@
                         width: 150px;
                     }
                 }
+
+               
         }
     
 
@@ -315,6 +330,13 @@
                                 display: inline-block;
                                 width: 150px;
                             }
+                        }
+
+                        .tooltip-content {
+                            width: 100%;
+                            position: absolute;
+                            right: -40%;
+                            bottom: 3em;
                         }
                     }
                     h2{
@@ -583,14 +605,15 @@
                             height: 2.5em;
                             margin: 5px 1em 0 0;
                             background-image: url(https://static.iviva.com/images/Udhayimages/trade.png);  
+                            cursor: pointer;
                         }
                         .arrow-icon{
                             display: inline-block;
                             background-repeat: no-repeat;
                             background-position: center center;
                             background-size: 100% auto;
-                            width: 1.8em;
-                            height: 1.8em;
+                            width: 1.5em;
+                            height: 1.5em;
                             margin: 10px 0px 0 0;
                             vertical-align: top;
                             cursor: pointer;

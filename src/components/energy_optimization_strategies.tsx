@@ -39,6 +39,7 @@ let [selected2, setSelected2] = React.useState<string | null>("op-1");
 let [selected3, setSelected3] = React.useState<string | null>("op-1");  
 let [selected4, setSelected4] = React.useState<string | null>("op-1");  
 let [selected5, setSelected5] = React.useState<string | null>("op-1");  
+let [selected6, setSelected6] = React.useState<string | null>("op-8");  
  
 let [showModal, setShowModal] = React.useState(false);
 let [showModal1, setShowModal1] = React.useState(false); 
@@ -132,18 +133,33 @@ const waterSideEnergyData = [
   }
 ];
 
+
+
+const [visibleTooltip, setVisibleTooltip] = useState(null); 
+const [visibleTooltip1, setVisibleTooltip1] = useState(null);
+
+const handleTooltipToggle = (index:any) => {
+  setVisibleTooltip((prev:any) => (prev === index ? null : index));
+  setVisibleTooltip1(null); // Hide the other tooltip
+
+};
+const handleTooltipToggle1 = (index:any) => {
+  setVisibleTooltip1((prev:any) => (prev === index ? null : index));
+  setVisibleTooltip(null); // Hide the other tooltip
+};
+
+
+
 const airstatusElements = airSideEnergyData.map((item, index) => ( 
  <div className={`status ${item.statusClass}`} key={index}> 
     <div className="side-title">
-        <p onClick={() => setShowLinkWidget(true)}>{item.title}</p>
-        {/* <span className="info"><p>{item.info_content} <span className="info-cont">{item.info_cont}</span></p></span> */}
-        {/* <span className="info"><p> <span className="info-cont">{item.info_cont}</span></p></span> */}
-
-        {/* <span className="info"><p> <span className="info-cont">{item.info_cont}</span></p></span> */}
-        {/* <Tooltip content="This is a tooltip" /> */} 
-
-        <span className="info"><p> <span className="info-cont"><Tooltip content={() => <div>{item.info_cont}</div>} /></span></p></span>
-          
+        <p onClick={() => setShowLinkWidget(true)}>{item.title}</p>  
+          <span className="info" onClick={() => handleTooltipToggle(index)}></span>
+            {visibleTooltip === index && (
+              <div className="tooltip-content">
+                {item.info_cont}
+              </div>
+            )}  
     </div>  
     <h2>{item.value} <span>kWh</span></h2> 
     <div className="status_bot-sec"><span className={`arrow ${item.arrow_status}`}></span> {item.change} %</div>  
@@ -154,11 +170,13 @@ const airstatusElements = airSideEnergyData.map((item, index) => (
 const waterstatusElements = waterSideEnergyData.map((item, index) => ( 
   <div className={`status ${item.statusClass}`} key={index}> 
      <div className="side-title">
-         <p>{item.title}</p>
-         {/* <span className="info"><p> <span className="info-cont">{item.info_cont}</span></p></span> */}
-         
-        <span className="info"><p> <span className="info-cont"><Tooltip content={() => <div>{item.info_cont}</div>} /></span></p></span>
-         
+         <p>{item.title}</p> 
+         <span className="info" onClick={() => handleTooltipToggle1(index)}></span>
+            {visibleTooltip1 === index && (
+              <div className="tooltip-content">
+                {item.info_cont}
+              </div>
+            )} 
      </div>  
      <h2>{item.value} <span>kWh</span></h2> 
      <div className="status_bot-sec"><span className={`arrow ${item.arrow_status}`}></span> {item.change} %</div>  
@@ -329,8 +347,44 @@ const energyChartData = [
                                         ]}
                                         onChange={(value) => { setSelected5(value) }}
                                         placeholder=" -- select --"
-                                    />  
-                                    <div className="calen-icon"></div>
+                                    />          
+
+                                    <div className="calen-icon">  
+                                        <FilterPanel> 
+                                            <Select
+                                                selected={selected6}
+                                                options={[
+                                                    { label: "01 : 00", value: "op-1" },
+                                                    { label: "02 : 00", value: "op-2" },
+                                                    { label: "03 : 00", value: "op-3" },
+                                                    { label: "04 : 00", value: "op-4" },
+                                                    { label: "05 : 00", value: "op-5" },
+                                                    { label: "06 : 00", value: "op-6" },
+                                                    { label: "07 : 00", value: "op-7" },
+                                                    { label: "08 : 00", value: "op-8" },
+                                                    { label: "09 : 00", value: "op-9" },
+                                                    { label: "10 : 00", value: "op-10" },
+                                                    { label: "11 : 00", value: "op-11" }, 
+                                                    { label: "12 : 00", value: "op-12" },
+                                                    { label: "13 : 00", value: "op-13" },
+                                                    { label: "14 : 00", value: "op-14" },
+                                                    { label: "15 : 00", value: "op-15" },
+                                                    { label: "16 : 00", value: "op-16" },
+                                                    { label: "17 : 00", value: "op-17" },
+                                                    { label: "18 : 00", value: "op-18" },
+                                                    { label: "19 : 00", value: "op-19" },
+                                                    { label: "20 : 00", value: "op-20" },
+                                                    { label: "21 : 00", value: "op-21" },
+                                                    { label: "22 : 00", value: "op-22" },
+                                                    { label: "23 : 00", value: "op-23" },
+                                                    { label: "24 : 00", value: "op-24" },
+                                                ]}
+                                                onChange={(value) => { setSelected6(value) }}
+                                                placeholder=" -- select --"
+                                            />  
+
+                                        </FilterPanel>  
+                                      </div>
 
                                  </div>
 
@@ -465,7 +519,41 @@ const energyChartData = [
                                               onChange={(value) => { setSelected5(value) }}
                                               placeholder=" -- select --"
                                           />  
-                                          <div className="calen-icon"></div>
+                                          <div className="calen-icon">  
+                                        <FilterPanel> 
+                                            <Select
+                                                selected={selected6}
+                                                options={[
+                                                    { label: "01 : 00", value: "op-1" },
+                                                    { label: "02 : 00", value: "op-2" },
+                                                    { label: "03 : 00", value: "op-3" },
+                                                    { label: "04 : 00", value: "op-4" },
+                                                    { label: "05 : 00", value: "op-5" },
+                                                    { label: "06 : 00", value: "op-6" },
+                                                    { label: "07 : 00", value: "op-7" },
+                                                    { label: "08 : 00", value: "op-8" },
+                                                    { label: "09 : 00", value: "op-9" },
+                                                    { label: "10 : 00", value: "op-10" },
+                                                    { label: "11 : 00", value: "op-11" }, 
+                                                    { label: "12 : 00", value: "op-12" },
+                                                    { label: "13 : 00", value: "op-13" },
+                                                    { label: "14 : 00", value: "op-14" },
+                                                    { label: "15 : 00", value: "op-15" },
+                                                    { label: "16 : 00", value: "op-16" },
+                                                    { label: "17 : 00", value: "op-17" },
+                                                    { label: "18 : 00", value: "op-18" },
+                                                    { label: "19 : 00", value: "op-19" },
+                                                    { label: "20 : 00", value: "op-20" },
+                                                    { label: "21 : 00", value: "op-21" },
+                                                    { label: "22 : 00", value: "op-22" },
+                                                    { label: "23 : 00", value: "op-23" },
+                                                    { label: "24 : 00", value: "op-24" },
+                                                ]}
+                                                onChange={(value) => { setSelected6(value) }}
+                                                placeholder=" -- select --"
+                                            />   
+                                        </FilterPanel>  
+                                      </div>
 
                                       </div>
 
