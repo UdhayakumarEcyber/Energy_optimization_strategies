@@ -410,7 +410,7 @@ const handleTradeIconClick = (date: any) => {
                           <div className="total_energy_status">  
                             <span className="energy-icon"></span>
                               <h6 className="total_energy-title">Energy Saving</h6>   
-                              <h2>19.714.20 <span>kWh</span><em>2025-01-01 to 2025-01-31</em></h2> 
+                              <h2>19,714.20 <span>kWh</span><em>2025-01-01 to 2025-01-31</em></h2> 
                               <div className="status_bot-sec"><span className={`arrow up-arrow`}></span> 3.52 %</div>  
                               <div className="tot-kwh">235.25 kWh</div>  
  
@@ -1016,7 +1016,7 @@ export default Energy_Optimization_Strategies;
 //                           <div className="total_energy_status">  
 //                             <span className="energy-icon"></span>
 //                               <h6 className="total_energy-title">Energy Saving</h6>   
-//                               <h2>19.714.20 <span>kWh</span><em>2025-01-01 to 2025-01-31</em></h2> 
+//                               <h2>19,714.20 <span>kWh</span><em>2025-01-01 to 2025-01-31</em></h2> 
 //                               <div className="status_bot-sec"><span className={`arrow up-arrow`}></span> 3.52 %</div>  
 //                               <div className="tot-kwh">235.25 kWh</div> 
 //                                <span className="info"></span>  
